@@ -232,7 +232,7 @@ GPGPU-Sim uArch:   28  29  30  31  32  33  34
 GPGPU-Sim uArch:   35  36  37  38  39  40  41
 GPGPU-Sim uArch:   42  43  44  45  46  47  48
 GPGPU-Sim uArch:   49  50  51
-a895c2e92e4130c1c35c1f0197de119a  /afs/cs.wisc.edu/u/h/x/hxiao/public/test/tesla-attack
+6cb1a2dfc408520f00e7b7e3825dc35f  /afs/cs.wisc.edu/u/h/x/hxiao/public/test/tesla-attack
 Extracting PTX file and ptxas options    1: tesla-attack.1.sm_30.ptx -arch=sm_30
 GPGPU-Sim uArch: performance model initialization complete.
 self exe links to: /afs/cs.wisc.edu/u/h/x/hxiao/public/test/tesla-attack
@@ -243,7 +243,7 @@ self exe links to: /afs/cs.wisc.edu/u/h/x/hxiao/public/test/tesla-attack
 Running md5sum using "md5sum /afs/cs.wisc.edu/u/h/x/hxiao/public/test/tesla-attack "
 self exe links to: /afs/cs.wisc.edu/u/h/x/hxiao/public/test/tesla-attack
 Extracting specific PTX file named tesla-attack.1.sm_30.ptx 
-GPGPU-Sim PTX: __cudaRegisterFunction _Z28static_sequence_read_multismPiPyiS0_i : hostFun 0x0x4014ff, fat_cubin_handle = 1
+GPGPU-Sim PTX: __cudaRegisterFunction _Z28static_sequence_read_multismPiPyiS0_i : hostFun 0x0x401609, fat_cubin_handle = 1
 GPGPU-Sim PTX: Parsing tesla-attack.1.sm_30.ptx
 GPGPU-Sim PTX: allocating shared region for "shared_array" from 0x0 to 0x0 (shared memory space)
 GPGPU-Sim PTX: instruction assembly for function '_Z10test_clockRiS_'...   done.
@@ -259,20 +259,20 @@ GPGPU-Sim PTX: Kernel '_Z28static_sequence_read_multismPiPyiS0_i' : regs=13, lme
 GPGPU-Sim PTX: Kernel '_Z20static_sequence_readRiPyiRyi' : regs=24, lmem=0, smem=0, cmem=356
 GPGPU-Sim PTX: Kernel '_Z13sequence_readRxPiii' : regs=26, lmem=0, smem=0, cmem=344
 GPGPU-Sim PTX: Kernel '_Z10test_clockRiS_' : regs=9, lmem=0, smem=0, cmem=336
-GPGPU-Sim PTX: __cudaRegisterFunction _Z20static_sequence_readRiPyiRyi : hostFun 0x0x4013c5, fat_cubin_handle = 1
-GPGPU-Sim PTX: __cudaRegisterFunction _Z13sequence_readRxPiii : hostFun 0x0x4012ab, fat_cubin_handle = 1
-GPGPU-Sim PTX: __cudaRegisterFunction _Z10test_clockRiS_ : hostFun 0x0x4011b7, fat_cubin_handle = 1
-16	Strat mallocing
+GPGPU-Sim PTX: __cudaRegisterFunction _Z20static_sequence_readRiPyiRyi : hostFun 0x0x4014cf, fat_cubin_handle = 1
+GPGPU-Sim PTX: __cudaRegisterFunction _Z13sequence_readRxPiii : hostFun 0x0x4013b5, fat_cubin_handle = 1
+GPGPU-Sim PTX: __cudaRegisterFunction _Z10test_clockRiS_ : hostFun 0x0x4012c1, fat_cubin_handle = 1
+Strat mallocing
 GPGPU-Sim: synchronize waiting for inactive GPU simulation
 GPGPU-Sim API: Stream Manager State
 GPGPU-Sim: detected inactive GPU simulation thread
-GPGPU-Sim PTX: Setting up arguments for 8 bytes starting at 0x7ffde2c28698..
-GPGPU-Sim PTX: Setting up arguments for 8 bytes starting at 0x7ffde2c28690..
-GPGPU-Sim PTX: Setting up arguments for 4 bytes starting at 0x7ffde2c2868c..
-GPGPU-Sim PTX: Setting up arguments for 8 bytes starting at 0x7ffde2c28680..
-GPGPU-Sim PTX: Setting up arguments for 4 bytes starting at 0x7ffde2c28688..
+GPGPU-Sim PTX: Setting up arguments for 8 bytes starting at 0x7ffc0c3a0828..
+GPGPU-Sim PTX: Setting up arguments for 8 bytes starting at 0x7ffc0c3a0820..
+GPGPU-Sim PTX: Setting up arguments for 4 bytes starting at 0x7ffc0c3a081c..
+GPGPU-Sim PTX: Setting up arguments for 8 bytes starting at 0x7ffc0c3a0810..
+GPGPU-Sim PTX: Setting up arguments for 4 bytes starting at 0x7ffc0c3a0818..
 
-GPGPU-Sim PTX: cudaLaunch for 0x0x4014ff (mode=performance simulation) on stream 0
+GPGPU-Sim PTX: cudaLaunch for 0x0x401609 (mode=performance simulation) on stream 0
 GPGPU-Sim PTX: finding reconvergence points for '_Z28static_sequence_read_multismPiPyiS0_i'...
 GPGPU-Sim PTX: Finding dominators for '_Z28static_sequence_read_multismPiPyiS0_i'...
 GPGPU-Sim PTX: Finding immediate dominators for '_Z28static_sequence_read_multismPiPyiS0_i'...
@@ -1668,5 +1668,4 @@ GPGPU-Sim: detected inactive GPU simulation thread
 GPGPU-Sim: synchronize waiting for inactive GPU simulation
 GPGPU-Sim API: Stream Manager State
 GPGPU-Sim: detected inactive GPU simulation thread
-2217.000000
 GPGPU-Sim: *** exit detected ***

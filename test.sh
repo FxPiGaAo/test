@@ -1,5 +1,5 @@
 make clean
 make
-rm ./my.stdout
-touch ./my.stdout
+rm -f ./my.stdout ./programout.txt
+touch ./my.stdout ./programout.txt
 ./tesla-attack >| ./my.stdout

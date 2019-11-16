@@ -103,7 +103,11 @@ __global__ void static_sequence_read_noinitialize(int* latency, long long unsign
    }
 }
 */
-int main(void){/*
+int main(void){
+   FILE* fp = fopen("./programout.txt","w");
+   assert(fp!=NULL);
+
+/*
    for(int array_size = 64; array_size<2048;array_size+=8){
      int device_size = sizeof(int)*array_size;
      int* device_array;
@@ -160,7 +164,7 @@ int main(void){/*
      int sm_max = 1;
      //long long unsigned array_size = 16;
      //printf("array size =%d\n",array_size);
-     printf("%d\t",array_size);
+     fprintf(fp,"%d\t",array_size);
      long long unsigned device_size = sizeof(long long unsigned)*array_size*sm_max;
      long long unsigned* device_array;
      long long unsigned* host_array = (long long unsigned*)malloc(array_size*sizeof(long long unsigned*)*sm_max);
@@ -227,8 +231,8 @@ double access_time;
          access_time+=timing[i];
      }
     // printf("It took me %lf clicks",access_time/sm_max);
-     printf("%lf\n",access_time/sm_max);
-
+     fprintf(fp,"%lf\n",access_time/sm_max);
+     fclose(fp);
 
 
      /*
