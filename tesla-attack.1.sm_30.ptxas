@@ -1,0 +1,17 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z28static_sequence_read_multismPiPyiS0_i' for 'sm_30'
+ptxas info    : Function properties for _Z28static_sequence_read_multismPiPyiS0_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 13 registers, 356 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z20static_sequence_readRiPyiRyi' for 'sm_30'
+ptxas info    : Function properties for _Z20static_sequence_readRiPyiRyi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 24 registers, 356 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z13sequence_readRxPiii' for 'sm_30'
+ptxas info    : Function properties for _Z13sequence_readRxPiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 26 registers, 344 bytes cmem[0]
+ptxas info    : Compiling entry function '_Z10test_clockRiS_' for 'sm_30'
+ptxas info    : Function properties for _Z10test_clockRiS_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 9 registers, 336 bytes cmem[0]
