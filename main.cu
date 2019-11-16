@@ -62,11 +62,11 @@ __global__ void static_sequence_read_multism(int* latency, long long unsigned* d
    int threadx =threadIdx.x;
    int smid = blockIdx.x;
    clock_t start, end;
-   long long unsigned temp_value;
+   long long unsigned temp_value=0;
    long long unsigned *j;
    if(threadx == 0){
        for(int i=0;i<array_size;i++){
-          temp_value = device_array[i+array_size*smid];
+          temp_value += device_array[i+array_size*smid];
        }
    }
    last_access_value[smid]=temp_value;
@@ -78,7 +78,7 @@ __global__ void static_sequence_read_multism(int* latency, long long unsigned* d
    if(threadx == 0){
 	   end = clock();
 	   latency[smid] = (int)(end - start);
-	   last_access_value[smid] = j[0];
+	   last_access_value[smid] += j[0];
    }
 }
 
@@ -160,7 +160,7 @@ int main(void){
      //cudaEventElapsedTime(&dt_ms, event1, event2);
      //cout << "cuda event elpased time:" << dt_ms << " ms\n";
 */
-     for(long long unsigned array_size = 16; array_size < 20; array_size += 4){
+     for(long long unsigned array_size = 256; array_size < 257; array_size += 4){
      int sm_max = 1;
      //long long unsigned array_size = 16;
      //printf("array size =%d\n",array_size);
@@ -220,7 +220,7 @@ double access_time;
 
 
      cudaDeviceSynchronize();
-     static_sequence_read_multism<<<sm_max,1>>>(timing_d, device_array, 16, d_last_access_value, array_size);
+     static_sequence_read_multism<<<sm_max,1>>>(timing_d, device_array, 4, d_last_access_value, array_size);
      cudaDeviceSynchronize();
      assert(cudaSuccess == cudaMemcpy(timing,timing_d,sizeof(int)*sm_max,cudaMemcpyDeviceToHost));
      assert(cudaSuccess == cudaMemcpy(last_access_value,d_last_access_value,sizeof(long long unsigned)*sm_max,cudaMemcpyDeviceToHost));
@@ -229,6 +229,7 @@ double access_time;
      for(int i=0;i<sm_max;i++){
      //printf ("It took me %d clicks, last_access value: %llu.\n",timing[i], last_access_value[i]);
          access_time+=timing[i];
+         printf("%llu\n",last_access_value[i]);
      }
     // printf("It took me %lf clicks",access_time/sm_max);
      fprintf(fp,"%lf\n",access_time/sm_max);
